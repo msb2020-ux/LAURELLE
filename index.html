@@ -1,121 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Site not available</title>
-    <style>
-      :root {
-        --colorRgbFacetsTeal600: 2 128 125;
-        --colorTealAction: var(--colorRgbFacetsTeal600);
-        --colorRgbFacetsNeutralLight200: 233 235 237;
-        --colorHr: var(--colorRgbFacetsNeutralLight200);
-        --colorRgbFacetsNeutralLight700: 53 58 62;
-        --colorGrayDarkest: var(--colorRgbFacetsNeutralLight700);
-        --colorGrayLighter: var(--colorRgbFacetsNeutralLight200);
-        --colorText: var(--colorGrayDarkest);
-        --effectShadowLightShallow: 0 1px 10px 0 rgb(53 58 62 / 6%),
-          0 2px 4px 0 rgb(53 58 62 / 8%);
-        --colorRgbFacetsNeutralDark900: 6 11 16;
-      }
-      body {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
-          "Segoe UI Emoji", "Segoe UI Symbol";
-        background: white;
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-        line-height: 1.5;
-        color: rgb(var(--colorText));
-      }
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laurelle Parks | Fairhope, AL Hairstylist</title>
+<style>
+    /* Reset & base */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Arial', sans-serif; color:#333; line-height:1.6; background:#fff; }
 
-      @media (prefers-color-scheme: dark) {
-        body {
-          background: rgb(var(--colorRgbFacetsNeutralDark900));
-        }
-      }
-
-      h1 {
-        margin: 0;
-        font-size: 1.375rem;
-        line-height: 1;
-      }
-
-      h1 + p {
-        margin-top: 8px;
-      }
-
-      .main {
+    /* Hero Section */
+    header {
         position: relative;
+        height: 100vh;
+        background: url('Laurelle.jpg') center/cover no-repeat;
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
-        height: 100vh;
-        width: 100vw;
-      }
+        align-items: center;
+        text-align: center;
+        color:#fff;
+        padding: 20px;
+    }
+    header h1 { font-size: 3rem; margin-bottom: 10px; font-weight: 700; text-shadow: 1px 1px 6px rgba(0,0,0,0.5); }
+    header p { font-size: 1.3rem; margin-bottom: 20px; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); }
+    header a.cta {
+        display:inline-block;
+        padding: 15px 30px;
+        background: #d4af37; /* subtle gold */
+        color:#fff;
+        text-decoration:none;
+        border-radius:5px;
+        font-weight:bold;
+        transition: 0.3s;
+    }
+    header a.cta:hover { background:#b8972a; }
 
-      .card {
-        position: relative;
-        width: 75%;
-        max-width: 364px;
-        padding: 24px;
-        background: white;
-        border-radius: 8px;
-        box-shadow: var(--effectShadowLightShallow);
-        border: 1px solid rgb(var(--colorGrayLighter));
-      }
+    /* Service Highlights */
+    section.services { padding: 60px 20px; text-align:center; background:#fefcf7; }
+    section.services h2 { font-size: 2rem; margin-bottom: 40px; }
+    .service-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; max-width:1000px; margin:auto; }
+    .card {
+        background:#fff;
+        padding:20px;
+        border-radius:10px;
+        box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    }
+    .card img { width:100%; border-radius:10px; margin-bottom:15px; }
+    .card h3 { font-size:1.3rem; margin-bottom:10px; }
+    .card p { color:#555; }
 
-      a {
-        margin: 0;
-        font-weight: 600;
-        color: rgb(var(--colorTealAction));
-        text-decoration-skip-ink: all;
-        text-decoration-thickness: 1px;
-        text-underline-offset: 2px;
-        text-decoration-color: rgb(var(--colorTealAction) / 0.5);
-        transition: text-decoration-color 0.15s ease-in-out;
-      }
+    /* Gallery */
+    section.gallery { padding:60px 20px; }
+    section.gallery h2 { text-align:center; font-size:2rem; margin-bottom:40px; }
+    .gallery-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px; max-width:1100px; margin:auto; }
+    .gallery-grid img { width:100%; border-radius:10px; }
 
-      a:hover,
-      a:focus-visible {
-        text-decoration-color: rgb(var(--colorTealAction));
-      }
+    /* Contact / Location */
+    section.contact { padding:60px 20px; background:#fefcf7; text-align:center; }
+    section.contact h2 { font-size:2rem; margin-bottom:20px; }
+    section.contact p { margin-bottom:10px; }
+    section.contact a.button {
+        display:inline-block;
+        padding:12px 25px;
+        margin-top:10px;
+        background:#d4af37;
+        color:#fff;
+        border-radius:5px;
+        text-decoration:none;
+        font-weight:bold;
+    }
+    section.contact a.button:hover { background:#b8972a; }
 
-      p:last-of-type {
-        margin-bottom: 0;
-      }
+    /* Footer / Socials */
+    footer { background:#fff; text-align:center; padding:20px; font-size:0.9rem; color:#777; }
+    footer a { color:#d4af37; margin:0 10px; text-decoration:none; font-weight:bold; }
+    footer a:hover { color:#b8972a; }
 
-      hr {
-        border: 0;
-        height: 1px;
-        background: rgb(var(--colorHr));
-        margin-top: 16px;
-        margin-bottom: 16px;
-      }
+    /* Responsive */
+    @media(max-width:768px){
+        header h1 { font-size:2.2rem; }
+        header p { font-size:1rem; }
+    }
+</style>
+</head>
+<body>
 
-      .your-site {
-        font-size: 0.875rem;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="main">
-      <div class="card">
-        <h1>Site not available</h1>
-        <p>
-          This site was paused as it reached its usage limits. Please contact the site owner for more information.
-        </p>
-        <hr />
-        <p class="your-site">
-          If this is your site, please visit Netlify’s
-          <a href="https://docs.netlify.com/manage/accounts-and-billing/billing/resume-paused-projects/"
-            >Billing docs page</a
-          >
-          or log into your Netlify account to upgrade your plan.
-        </p>
-      </div>
+<!-- Hero Section -->
+<header>
+    <h1>Laurelle Parks | Fairhope, AL Hairstylist</h1>
+    <p>Specialist in Blondes, Brunettes, and Signature Blowouts</p>
+    <a class="cta" href="https://www.instagram.com/hair.bylaurelle/" target="_blank">Book an Appointment</a>
+</header>
+
+<!-- Service Highlights -->
+<section class="services">
+    <h2>Our Expertise</h2>
+    <div class="service-cards">
+        <div class="card">
+            <img src="588957803_17922348390191536_3710543698750504693_n.jpg" alt="Expert Blonding">
+            <h3>Expert Blonding</h3>
+            <p>Professional blonde highlights and balayage tailored to your style.</p>
+        </div>
+        <div class="card">
+            <img src="589695987_17922348405191536_4233175679866395969_n.jpg" alt="Dimensional Brunettes">
+            <h3>Dimensional Brunettes</h3>
+            <p>Rich, multi-tonal brunette transformations for depth and shine.</p>
+        </div>
+        <div class="card">
+            <img src="610555354_17926455405191536_4723484590579081896_n.jpg" alt="Luxury Blowouts">
+            <h3>Luxury Blowouts</h3>
+            <p>Signature styling and blowouts that leave hair silky and polished.</p>
+        </div>
     </div>
-  </body>
+</section>
+
+<!-- Gallery -->
+<section class="gallery">
+    <h2>The Art of Hair</h2>
+    <div class="gallery-grid">
+        <img src="610676635_17926455423191536_6244076944316281650_n.jpg" alt="">
+        <img src="615051084_17927217483191536_4563336244205264382_n.jpg" alt="">
+        <img src="625884008_17929631817191536_3538788305406337537_n.jpg" alt="">
+        <img src="631078831_17930443401191536_7652474833843057349_n.jpg" alt="">
+        <img src="652496925_17935092036191536_4460171270522499021_n.jpg" alt="">
+        <img src="653401222_17935092018191536_1467938592146809407_n.jpg" alt="">
+    </div>
+</section>
+
+<!-- Contact & Location -->
+<section class="contact">
+    <h2>Location & Contact</h2>
+    <p>Scott Whitney Salon</p>
+    <p>8263 Gayfer Road Ext, Fairhope, AL 36532</p>
+    <a class="button" href="https://www.google.com/maps/dir/?api=1&destination=8263+Gayfer+Road+Ext,+Fairhope,+AL+36532" target="_blank">Get Directions</a>
+    <p style="margin-top:20px;">Follow Laurelle:</p>
+    <footer>
+        <a href="https://www.tiktok.com/@laurelle_parks2" target="_blank">TikTok</a> |
+        <a href="https://www.instagram.com/hair.bylaurelle/" target="_blank">Instagram</a>
+    </footer>
+</section>
+
+</body>
 </html>
