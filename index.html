@@ -36,40 +36,34 @@
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
-    padding: 24px 48px;
+    padding: 20px 48px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    mix-blend-mode: normal;
-    transition: background 0.4s, padding 0.4s;
-  }
-  nav.scrolled {
-    background: rgba(250,247,242,0.95);
-    backdrop-filter: blur(8px);
-    padding: 16px 48px;
+    background: rgba(250,247,242,0.96);
+    backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
+    transition: padding 0.3s;
   }
+  nav.scrolled { padding: 14px 48px; }
   .nav-logo {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 400;
     letter-spacing: 0.12em;
-    color: #fff;
+    color: var(--dark);
     text-decoration: none;
-    transition: color 0.3s;
   }
-  nav.scrolled .nav-logo { color: var(--dark); }
   .nav-links { display: flex; gap: 36px; list-style: none; }
   .nav-links a {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.85);
+    color: var(--muted);
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.2s;
   }
-  nav.scrolled .nav-links a { color: var(--muted); }
-  .nav-links a:hover { color: var(--gold) !important; }
+  .nav-links a:hover { color: var(--gold); }
 
   /* ── HERO ── */
   .hero {
@@ -79,6 +73,7 @@
     display: flex;
     align-items: flex-end;
     overflow: hidden;
+    padding-top: 64px;
   }
   .hero-img {
     position: absolute;
@@ -96,8 +91,8 @@
     inset: 0;
     background: linear-gradient(
       to top,
-      rgba(20,15,10,0.75) 0%,
-      rgba(20,15,10,0.2) 50%,
+      rgba(20,15,10,0.78) 0%,
+      rgba(20,15,10,0.25) 50%,
       transparent 100%
     );
   }
@@ -301,7 +296,7 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   .gallery-masonry .g-item:hover img { transform: scale(1.05); }
   .g-item:nth-child(1) { grid-row: span 2; }
@@ -415,8 +410,8 @@
 
   /* ── MOBILE ── */
   @media (max-width: 900px) {
-    nav { padding: 20px 24px; }
-    nav.scrolled { padding: 14px 24px; }
+    nav { padding: 16px 24px; }
+    nav.scrolled { padding: 12px 24px; }
     .nav-links { display: none; }
     .hero-content { padding: 0 24px 64px; }
     section { padding: 72px 24px; }
@@ -435,7 +430,7 @@
 
 <!-- NAV -->
 <nav id="nav">
-  <a class="nav-logo" href="#">Laurelle</a>
+  <a class="nav-logo" href="#">Hair by Laurelle</a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#gallery">Gallery</a></li>
@@ -450,7 +445,7 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Fairhope, Alabama</p>
-    <h1>The Art of<br><em>Beautiful Hair</em></h1>
+    <h1>Hair by<br><em>Laurelle</em></h1>
     <p class="hero-sub">Precision color, lived-in blondes, and<br>signature blowouts — by Laurelle Parks.</p>
     <a class="btn-primary" href="https://www.instagram.com/hair.bylaurelle/" target="_blank">Book an Appointment</a>
   </div>
@@ -553,7 +548,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <span class="footer-logo">Laurelle Parks</span>
+  <span class="footer-logo">Hair by Laurelle</span>
   <span class="footer-copy">© 2025 · Fairhope, Alabama</span>
   <div class="footer-socials">
     <a href="https://www.instagram.com/hair.bylaurelle/" target="_blank">Instagram</a>
