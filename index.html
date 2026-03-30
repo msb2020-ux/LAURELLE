@@ -191,33 +191,8 @@
   .footer-socials{display:flex;gap:28px;}
   .footer-socials a{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;cursor:none;}
   .footer-socials a:hover{color:var(--accent);}
-  /* credit — same size as copyright, bolder, brighter */
-  .footer-credit{
-    text-align:center;
-    padding:10px 64px 14px;
-    border-top:1px solid rgba(255,255,255,.04);
-    font-size:.65rem;          /* matches .footer-copy */
-    letter-spacing:.18em;
-    color:rgba(255,255,255,.38); /* noticeably more visible */
-    font-style:italic;
-    font-weight:500;           /* semi-bold */
-  }
-  /* theme badge — same size as copyright text */
-  .theme-badge{
-    position:fixed;bottom:20px;right:20px;z-index:200;
-    font-family:'Jost',sans-serif;
-    font-size:.65rem;          /* matches .footer-copy */
-    letter-spacing:.18em;text-transform:uppercase;
-    padding:6px 14px;
-    border:1px solid var(--accent);
-    color:var(--accent);
-    background:rgba(0,0,0,.5);
-    backdrop-filter:blur(6px);
-    border-radius:20px;
-    pointer-events:none;
-    opacity:0;
-    animation:fadeUp 1s 2s forwards;
-  }
+  .footer-credit{text-align:center;padding:10px 64px 14px;border-top:1px solid rgba(255,255,255,.04);font-size:.65rem;letter-spacing:.18em;color:rgba(255,255,255,.38);font-style:italic;font-weight:500;}
+  .theme-badge{position:fixed;bottom:20px;right:20px;z-index:200;font-family:'Jost',sans-serif;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;padding:6px 14px;border:1px solid var(--accent);color:var(--accent);background:rgba(0,0,0,.5);backdrop-filter:blur(6px);border-radius:20px;pointer-events:none;opacity:0;animation:fadeUp 1s 2s forwards;}
 
   @media(max-width:768px){
     body{cursor:auto;}
@@ -228,7 +203,12 @@
     nav.scrolled{padding:12px 20px;}
     .hero-content{padding:0 20px 56px;}
     .hero-line1{font-size:clamp(1.2rem,5vw,1.8rem);}
-    .hero-line2{font-size:clamp(1.8rem,10.5vw,3.5rem);line-height:1.35;padding:.08em 0 .16em;}
+    /* FIX 1: reduce font + add right padding so script tail doesn't clip */
+    .hero-line2{
+      font-size:clamp(1.8rem,9.5vw,3.2rem);
+      line-height:1.35;
+      padding:.08em 8% .16em 0; /* right padding = room for the curly tail */
+    }
     .hero-sub{font-size:.8rem;margin-top:10px;margin-bottom:28px;}
     section{padding:60px 20px;}
     .services-inner{grid-template-columns:1fr;gap:36px;}
@@ -244,7 +224,8 @@
     .footer-main{flex-direction:column;gap:14px;text-align:center;padding:24px 20px;}
     .footer-credit{padding:8px 20px 12px;}
     .scroll-indicator{display:none;}
-    .theme-badge{bottom:12px;right:12px;}
+    /* FIX 2: raise badge so it clears the footer credit line */
+    .theme-badge{bottom:56px;right:12px;}
     .intro-hair-by{font-size:clamp(2rem,8vw,4rem);}
     .intro-laurelle{font-size:clamp(3rem,16vw,7rem);}
   }
